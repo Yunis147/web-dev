@@ -1,0 +1,106 @@
+//for each
+// it will access every element in the array
+
+
+let a = [1,2,3,4];
+function print(el){
+    console.log(el);
+}
+a.forEach(print);
+//
+a.forEach(function(el) {
+    console.log(el)
+});  
+
+
+//  Map
+// it will create a new array with common operation on all elements
+
+let double = a.map((i)=>{
+    return i*2;
+});
+
+
+//filter
+// it will filter the array by a condition , only the elements which return true 
+// on  the condition will be added to new array
+
+let num = [1,2,3,4,5,6,7,8];
+let even = num.filter( (el) => {
+    return el % 2 == 0;
+});  
+
+
+//Every
+//it will return true if all elements return true on the condition and vice versa
+
+[10,20,30,35].every( (el) =>{
+    return el % 10 == 0;
+});    
+//true
+
+[2,4,6,3].every( (el) => {
+    return el % 2 == 0;
+}); 
+
+//false
+
+
+// some 
+// it will return if atleast one element is returning true , false if all elements return falls
+
+[1,2,3,4,5].some( (el) =>{
+    return el % 2 == 0 ;
+});   
+//true
+
+
+// reduce 
+// it will reduce the array to one element by performing operations 
+// Ex:- Max,Min
+
+[1,2,3,4].reduce( (res,el) =>{
+    return res+el
+},0)  
+
+// 10
+
+const arr = [1,2,3,4,5,6,7,8,9];
+console.log(arr); 
+
+const result = arr.reduce((max, el) => {
+    if (max < el) {
+        return el;
+    } else {
+        return max;
+    }
+}, 0);
+
+console.log(result);  
+
+// 9 
+
+[1,2,3,4,5,6,7,8,9].reduce( (min,el) =>{
+    if(min > el){
+        return el
+    }else{
+        return min
+    }  
+},Infinity)    
+
+//1
+
+
+
+// spread (...)
+// it will spread its elements 
+
+let ar = [1,2,3,4,5];
+
+let a2 = [...ar,6,7]
+
+// a2 = 1,2,3,4,5,6,7
+
+Math.min(...ar)
+// Math.min(1,2,3,4,5) = 1
+
