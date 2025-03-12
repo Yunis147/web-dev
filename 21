@@ -104,3 +104,67 @@ let a2 = [...ar,6,7]
 Math.min(...ar)
 // Math.min(1,2,3,4,5) = 1
 
+
+
+//rest (...)
+
+// takes the remaining elements 
+// it can take indefinte elements
+
+function sum(...args){
+    return args.reduce((sum,el) => sum + el);
+}
+sum(1,2,3,4);
+// 10
+
+
+function min(...args){
+    return args.reduce((min,el) =>{
+        if(min > el){
+            return el;
+        }else{
+            return min;
+        }
+    })
+}
+
+console.log(min(2,6,1,8,4));
+// 1 
+
+
+
+// Destructing (Arrays)
+// storing values of array into multiple variables
+
+let names = ["Yunis" , "anirudh","Nithin"];
+
+let [first , second , third] = names;
+console.log(`${third}`);
+// Nithin
+
+// destructing with arrays
+
+let marks = [59,39,57,39,89]
+let [maths,phy,...others] = marks;
+console.log(others);
+
+// [57,39,89]
+
+
+// destructing (objects)
+
+
+const student = {
+    name: "Yunis",
+    age: 17,
+    class : "1-2"
+};
+let {name, age, class: studentClass , place,city = "hyd"} = student;
+
+
+Here , 
+name = yunis
+age = 17
+studentClass = 1-2
+place = undefined(it is not declared in object)
+city = hyd (default value)
