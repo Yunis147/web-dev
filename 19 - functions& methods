@@ -1,0 +1,127 @@
+// functions 
+
+function helloWorld(){
+    console.log("Hello world");
+}
+
+helloWorld();
+
+// printing numbers
+
+
+function num(){
+    for (let i = 1; i <= 5; i++){
+        console.log(i);
+    }
+}
+num();
+
+// functions with arguments
+
+function sum(a,b){
+    return a+b;
+}
+
+console.log(sum(2,3));
+//5
+
+// 
+
+
+// scopes = accessibility of variables , objects and functions
+
+// 1) Function scope
+// we cannot the access the variables which were created in the function outside of the function
+
+// 2)Block scope 
+// variables declared inside a {} block cannot accessed from outside the block
+
+// 3)Lexial scope 
+// a variable declared in outer function can be accessible from the inside function but
+// the oposite is not true
+
+function outer(){
+    let a = 15;
+    function inner(){
+        console.log(a);
+    }
+    inner();
+}
+
+// it will print the value of a 
+
+function outer(){
+    function inner(){
+        let a = 15;
+    }
+    inner();
+    console.log(a);
+}
+
+// but here the error will come
+
+
+// Function expressions 
+// here we assign the function to variables
+
+let product = function(a,b){
+    return a*b;
+}
+console.log(product(3,5));
+// 15 
+
+// we can even change the function in it afterwards
+
+product = function(a,b,c){
+    return a*b*c;
+}
+console.log(product(2,4,6));
+// 48
+
+// Higher order functions 
+// that does one or both :
+// 1) Takes one or multiple functions as arguments
+// 2) returns a function
+
+function multipleGreet(func,n){
+    for(let i = 1;i<=n;i++){
+        func();
+    }
+}
+function greet(){
+    console.log("Hello");
+}
+multipleGreet(greet,4);
+
+// prints hello 4 times
+
+multipleGreet(function(){console.log("namaste");},5);
+
+// prints namaste 5 times
+
+
+// methods
+// functions inside a object
+
+const calculator = {
+    add:function(a,b){
+        return a+b;
+    },
+    product:function(a,b){
+        return a*b;
+    },
+    divide:function(a,b){
+        return a/b;
+    },
+    modulo:function(a,b){
+        return a%b;
+    }
+}
+calculator.add(2,3);
+// 5
+calculator.product(2,3);
+// 6
+calculator.divide(6,3);
+// 2
+calculator.modulo(5,2);
+// 1
