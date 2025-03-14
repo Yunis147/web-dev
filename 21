@@ -7,7 +7,9 @@ function print(el){
     console.log(el);
 }
 a.forEach(print);
+
 //
+
 a.forEach(function(el) {
     console.log(el)
 });  
@@ -36,7 +38,8 @@ let even = num.filter( (el) => {
 
 [10,20,30,35].every( (el) =>{
     return el % 10 == 0;
-});    
+});   
+
 //true
 
 [2,4,6,3].every( (el) => {
@@ -52,6 +55,7 @@ let even = num.filter( (el) => {
 [1,2,3,4,5].some( (el) =>{
     return el % 2 == 0 ;
 });   
+
 //true
 
 
@@ -102,6 +106,7 @@ let a2 = [...ar,6,7]
 // a2 = 1,2,3,4,5,6,7
 
 Math.min(...ar)
+
 // Math.min(1,2,3,4,5) = 1
 
 
@@ -115,6 +120,7 @@ function sum(...args){
     return args.reduce((sum,el) => sum + el);
 }
 sum(1,2,3,4);
+
 // 10
 
 
@@ -140,6 +146,7 @@ let names = ["Yunis" , "anirudh","Nithin"];
 
 let [first , second , third] = names;
 console.log(`${third}`);
+
 // Nithin
 
 // destructing with arrays
