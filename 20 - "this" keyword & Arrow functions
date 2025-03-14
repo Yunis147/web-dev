@@ -1,0 +1,196 @@
+// this keyword
+// this keyword refers to the object that is executing the current function
+
+console.log(this);
+// window object
+
+const student = {
+    maths: 90,
+    phy: 80,
+    chem: 85,
+    getAvg(){
+        let avg = (this.maths + this.phy + this.chem) / 3;
+        return avg;
+    }
+};
+
+console.log(student.getAvg());
+// 85
+
+
+// this keyword in nested objects
+
+const student2 = {
+  name: "John",
+  age: 20,
+  address: {
+    city: "New York",
+    country: "USA",
+    getFullAddress() {
+      console.log(this);
+    }
+  }
+};
+
+student2.address.getFullAddress();
+// address object
+
+
+
+// try and catch
+// try and catch block is used to handle errors in JavaScript
+
+try {
+  // code that may throw an error
+  console.log(sum);
+} catch (error) {
+  // code to handle the error
+  console.log(error);
+}
+
+
+// output
+// ReferenceError: sum is not defined
+
+
+// try, catch and finally
+// finally block is executed whether an error is thrown or not
+
+try {
+  console.log(sum);
+} catch (error) {
+  console.log(error);
+} finally {
+  console.log("finally block executed");
+}
+
+
+
+// output
+// ReferenceError: sum is not defined
+// finally block executed
+
+
+
+// Arrow functions
+// Arrow functions are a more concise way of writing function expressions
+
+const add = (a, b) => {
+  return a + b;
+};
+
+console.log(add(5, 5));
+// 10
+
+
+// Arrow functions with one parameter
+// If an arrow function has only one parameter, we can omit the parentheses
+
+const greet = name => {
+  console.log(`Hello ${name}`);
+};
+
+greet("John");
+// Hello John
+
+
+// Arrow functions with no parameters
+// If an arrow function has no parameters, we need to use an empty pair of parentheses
+
+const greet2 = () => {
+  console.log("Hello World");
+};
+
+greet2();
+// Hello World
+
+
+// Arrow functions with one line of code (implicit return)
+// If an arrow function has only one line of code, we can omit the curly braces and return keyword
+
+const add2 = (a, b) => a + b;
+
+console.log(add2(5, 5));
+// 10
+
+
+// Arrow functions with no parameters and one line of code
+const greet3 = () => console.log("Hello World");
+
+greet3();
+// Hello World
+
+
+// set timeout
+// setTimeout function is used to run a function after a specified time interval
+// setTimeout(function, time in milliseconds)
+
+console.log("Hello");
+setTimeout(() => {
+    console.log("apna college");
+},2000);
+
+console.log("welcome to");
+
+
+// output
+// Hello
+// welcome to
+// apna college (2 sec delay)
+
+
+// setInterval
+// setInterval function is used to run a function repeatedly after a specified time interval
+// setInterval(function, time in milliseconds)
+// clearInterval(id) will stop this function
+
+let id = setInterval(() =>{
+    console.log("Apna College");
+},3000);
+
+setTimeout(() => clearInterval(id), 12000);
+
+// print apna colleg (with interval 3s)
+
+
+
+// this keyword in arrow functions
+// Arrow functions do not have their own this keyword. They inherit this from the parent scope
+
+const student1 = {
+    name: "John",
+    age: 20,
+    prop: this, // window object(global scope)
+    getName: function() {
+      console.log(this);
+    }, // student object
+    greet: () => {
+      console.log(this);
+    } // window object (parent scope)
+  };
+  
+  student1.greet();
+  // window object
+
+// advantages of arrow functions
+
+const prop ={
+    getInfo1: function(){
+        setTimeout(function(){
+            console.log(this);
+        },2000);
+    },
+    getInfo2: function(){
+        setTimeout(() => {
+            console.log(this);
+        },2000);
+    }
+}
+prop.getInfo1();
+// window object
+// because the setTimeout belongs to the window object
+prop.getInfo2();
+// prop objects
+// because arrow function inherits this from the parent scope
+
+  
