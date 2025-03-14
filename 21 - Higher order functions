@@ -175,3 +175,10 @@ age = 17
 studentClass = 1-2
 place = undefined(it is not declared in object)
 city = hyd (default value)
+
+the name and age will destruct as usual but
+the class key will get the name studentClass and
+place and city will not be created in object but
+we can use them as variables 
+the place is undefined
+and the city has defailt parameter
