@@ -1,0 +1,93 @@
+// creating objects
+// we should use const 
+
+
+const person = {
+    name : "Yunis",
+    age : 17,
+    location : "Hyd"
+};
+
+// To access the object values
+
+console.log(person.name);
+console.log(person["age"]);
+
+// we can change the values 
+
+person.location = "Suryapet";
+
+// we can even create new key-value pairs
+
+person.college = "KMIT";
+
+
+// we can create nested objects also
+
+const student = {
+    name : "Yunis",
+    age : 17,
+    details:{
+        location : "hyd",
+        class : "cse"
+    }
+}
+
+student.details.location
+
+// hyd
+student.details
+
+//  location : "hyd",
+//  class : "cse"
+
+
+
+
+// we can create array of objects
+
+const students1 = [
+    { 
+        name: "Yunis",
+        age : 17
+    },
+     { 
+        name: "Nithin",
+        age : 19
+    },
+    { 
+        name: "Anirudh",
+        age : 17
+    }
+];
+
+// we can access each object
+
+students1[0] 
+students1[1]
+students1[2]
+
+// we can eaach elements in the every object
+
+students1[0].name
+// age
+students[1].age
+// 19
+
+// we can generate random numbers in javascript by Math.random()
+
+let num = Math.random();
+// a num betn 0 and 1 
+
+// to generate between 1 and 10
+
+let number = Math.floor(Math.random()*10+1)
+
+// from 1 to 5 
+
+let num1 = Math.floor(Math.random()*5+1);
+
+// from 21 to 25
+
+let num2 = Math.floor(Math.random()*5+21)
+
