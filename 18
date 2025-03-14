@@ -71,12 +71,14 @@ students1[2]
 
 students1[0].name
 // age
+
 students[1].age
 // 19
 
 // we can generate random numbers in javascript by Math.random()
 
 let num = Math.random();
+
 // a num betn 0 and 1 
 
 // to generate between 1 and 10
