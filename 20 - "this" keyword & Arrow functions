@@ -50,6 +50,7 @@ try {
 
 
 // output
+
 // ReferenceError: sum is not defined
 
 
@@ -67,6 +68,7 @@ try {
 
 
 // output
+
 // ReferenceError: sum is not defined
 // finally block executed
 
@@ -187,9 +189,12 @@ const prop ={
     }
 }
 prop.getInfo1();
+
 // window object
 // because the setTimeout belongs to the window object
+
 prop.getInfo2();
+
 // prop objects
 // because arrow function inherits this from the parent scope
 
