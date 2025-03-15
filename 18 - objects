@@ -37,6 +37,7 @@ const student = {
 student.details.location
 
 // hyd
+
 student.details
 
 //  location : "hyd",
