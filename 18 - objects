@@ -11,6 +11,7 @@ const person = {
 // To access the object values
 
 console.log(person.name);
+
 console.log(person["age"]);
 
 // we can change the values 
