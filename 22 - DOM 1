@@ -16,6 +16,7 @@
 
     <!-- writing text using innerText 
      it returns the text from the screen -->
+
     <p id="demo2">hii</p>
     <script>
       document.getElementById("demo2").innerText = "Hello World!";
@@ -175,9 +176,7 @@
     prepend(el) adds the text to the element at the beginning 
 
     insertAdjacentElement(where,el) adds the text to the element at the specified position 
-    where :- beforebegin, afterbegin, beforeend, afterend 
-
-    removeChild() to remove the element from the parent element -->
+    where :- beforebegin, afterbegin, beforeend, afterend    -->
 
     <div id="demo10"></div>
     <script>
