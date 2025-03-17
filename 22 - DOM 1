@@ -1,1 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar</title>
+  </head>
+
+  <body>
+    <!-- selecting element from id -->
+
+    <p id="demo1">Hello World</p>
+    <script>
+      let text = document.getElementById("demo1");
+    </script>
+
+    <!-- writing text using innerText 
+     it returns the text from the screen -->
+    <p id="demo2">hii</p>
+    <script>
+      document.getElementById("demo2").innerText = "Hello World!";
+    </script>
+
+    <!-- writing text using innerHTML
+     we can also use innerHTML to write text
+     we can write html tags using innerHTML -->
+
+    <p id="demo3"></p>
+    <script>
+      document.getElementById("demo3").innerHTML = "<h1>Hello World!</h1>";
+    </script>
+
+    <!-- textContent 
+    it returns the text from the code and it will not return the html tags -->
+
+    <p id="demo4">Hello World</p>
+    <script>
+      let msg = document.getElementById("demo4");
+      msg.textContent = "Hello there!";
+    </script>
+
+    <!-- it will write Hello World! in h1 tag -->
+
+    <!-- selecting element from class -->
+
+    <p class="demo5 abc xyz">Hello World</p>
+    <script>
+      let msg = document.getElementsByClassName("demo4");
+      msg = "Hello there!";
+    </script>
+
+    <!-- selecting element from tag name -->
+
+    <h1>Hello World</h1>
+    <h1>Hello World</h1>
+    <h1>Hello World</h1>
+    <script>
+      let para = document.getElementsByTagName("h1");
+      para[2].innerText = "Hello there!";
+    </script>
+
+    <!-- selecting element from querySelector 
+    selects the first element that matches a specified CSS selector(s) in the document 
+    querySelector() returns the first element that matches a specified
+    CSS selector(s) in the document. 
+    querySelectorAll() returns all elements in the document that matches a specified CSS
+    selector(s), as a static NodeList object. -->
+
+    <p id="demo5">Hello World</p>
+    <script>
+      let smg = document.querySelector("#demo5");
+      smg.innerText = "Hello there!";
+    </script>
+
+    <!-- selecting element from querySelectorAll -->
+
+    <p class="demo6">Hello World</p>
+    <p class="demo6">Hello World</p>
+    <script>
+      let msg1 = document.querySelectorAll(".demo6");
+      msg1[1].innerText = "Hello there!";
+    </script>
+
+    <!-- manipulating attributes
+    getter and setter
+    getAttribute(atr) method returns the value of the attribute with the specified name, of an element.
+    setAttribute(atr,val) method sets the value of the attribute with the specified name, of an element. -->
+
+    <img
+      id="myImage"
+      src="https://www.w3schools.com/js/pic_bulboff.gif"
+      width="60"
+      height="100"
+    />
+    <script>
+      let img = document.getElementById("myImage");
+      img.getAttribute("src");
+      // https://www.w3schools.com/js/pic_bulboff.gif
+      img.setAttribute("src", "https://www.w3schools.com/js/pic_bulbon.gif");
+
+      img.getAttribute("width");
+      // 60
+      img.setAttribute("width", "100");
+
+      img.getAttribute("class");
+      // null
+      img.setAttribute("class", "img");
+    </script>
+
+    <!-- manipulating styles
+    we can change the style of the element using style property
+    we can change the color, background-color, font-size, font-family, etc. -->
+
+    <p id="demo7">Hello World</p>
+    <script>
+      let text5 = document.getElementById("demo7");
+      text5.style.color = "red";
+      text5.style.backgroundColor = "black";
+      text5.style.fontSize = "30px";
+      text5.style.fontFamily = "Arial";
+    </script>
+
+    <!-- manipulating classes
+    we can add, remove, toggle, and check the class of the element 
+    classList.add() to add new classes
+    classList.remove to remove classes
+    classList.contains to check if class exists
+    classList.toggle() to toggle between add & remove -->
+
+    <p id="demo8">Hello World</p>
+    <script>
+      let text6 = document.getElementById("demo8");
+      text6.classList.add("abc");
+      // it will add the class abc to the element
+      text6.classList.remove("abc");
+      // it will remove the class abc from the element
+      text6.classList.contains("abc");
+      // it will return true if the class abc is present in the element
+      text6.classList.toggle("abc");
+      // it will add the class abc if it is not present and remove if it is present
+    </script>
+
+    <!-- navigation in the DOM
+    we can navigate in the DOM using the following properties
+    parentElement
+    children
+    nextElementSibling
+    previousElementSibling -->
+
+    <div id="demo9">
+      <p>hello</p>
+      <p>world</p>
+    </div>
+    <script>
+      let text7 = document.getElementById("demo9");
+      text7.parentElement;
+      // it will return the parent element of the element
+      text7.children;
+      // it will return the children of the element
+      text7.nextElementSibling;
+      // it will return the next element of the element
+      text7.previousElementSibling;
+      // it will return the previous element of the element
+    </script>
+
+    <!-- adding elements
+    we can add elements to the DOM using the following methods
+
+    createElement(el) to create a new element
+
+    appendChild(el) to add the element to the parent element
+
+    append(el) adds the text to the element
+
+    prepend(el) adds the text to the element at the beginning 
+
+    insertAdjacentElement(where,el) adds the text to the element at the specified position 
+    where :- beforebegin, afterbegin, beforeend, afterend 
+
+    removeChild() to remove the element from the parent element -->
+
+    <div id="demo10"></div>
+    <script>
+      let text8 = document.getElementById("demo10");
+      let para = document.createElement("p");
+      let newText = document.createTextNode("Hello World!");
+      para.appendChild(newText);
+      text8.appendChild(para);
+    </script>
+
+    <!-- adding elements using append() and prepend() -->
+
+    <div id="demo11"></div>
+    <script>
+      let text9 = document.getElementById("demo11");
+      text9.append("Hello World!");
+      // it will add the text to the element
+      text9.prepend("Hello World!");
+      // it will add the text to the element at the beginning
+
+      let para1 = document.createElement("p");
+      let newText1 = document.createTextNode("Hello World!");
+      para1.appendChild(newText1);
+      text9.append(para1);
+    </script>
+
+    <!-- adding elements using insertAdjacentElement() -->
+
+    <div id="demo12"></div>
+    <script>
+      let text10 = document.getElementById("demo12");
+      let para2 = document.createElement("p");
+      let newText2 = document.createTextNode("Hello World!");
+      para2.appendChild(newText2);
+      text10.insertAdjacentElement("beforebegin", para2);
+      // it will add the text to the element before the element
+      text10.insertAdjacentElement("afterbegin", para2);
+      // it will add the text to the element at the beginning
+      text10.insertAdjacentElement("beforeend", para2);
+      // it will add the text to the element at the end
+      text10.insertAdjacentElement("afterend", para2);
+      // it will add the text to the element after the element
+    </script>
+
+    <!-- removing elements
+     removeChild
+     remove -->
+
+    <div id="demo13">
+      <p>Hello World</p>
+    </div>
+    <script>
+      let text11 = document.getElementById("demo13");
+      let para3 = text11.querySelector("p");
+      text11.removeChild(para3);
+      // it will remove the element from the parent element
+      para3.remove();
+      // it will remove the element
+    </script>
+  </body>
+</html>
 
