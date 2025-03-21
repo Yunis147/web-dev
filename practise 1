@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>increase and decrease</title>
+    <style>
+      .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+      }
+      .contain {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .contain p {
+        font-size: 25px;
+      }
+      .counter {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+      }
+      .counter button {
+        padding: 3px 9px;
+        cursor: pointer;
+      }
+
+      .counter button:nth-child(odd) {
+        font-size: 30px;
+      }
+      button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+    <div class="contain">
+      <p class="count">0</p>
+      <div class="counter">
+        <button class="increase">+</button>
+        <button class="reset">reset</button>
+        <button class="decrease">-</button>
+      </div>
+    </div>
+    </div>
+    <script>
+      let count = 0;
+      let maxLimit = 10;
+      let minLimit = -10;
+      let countEl = document.querySelector(".count");
+      let increase = document.querySelector(".increase");
+      let decrease = document.querySelector(".decrease");
+      let reset = document.querySelector(".reset");
+
+      function updateCount() {
+        countEl.innerText = count;
+
+        increase.disabled = count >= maxLimit;
+
+        decrease.disabled = count <= minLimit;
+      }
+      increase.addEventListener("click", () => {
+        if (count < maxLimit) {
+          count++;
+          updateCount();
+        }
+      });
+      decrease.addEventListener("click", () => {
+        if (count > minLimit) {
+          count--;
+          updateCount();
+        }
+      });
+      reset.addEventListener("click", () => {
+        count = 0;
+        updateCount();
+      });
+    </script>
+  </body>
+</html>
