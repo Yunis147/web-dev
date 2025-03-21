@@ -26,14 +26,18 @@
     <script>
         let btn = document.querySelector("button")
         btn.addEventListener("click",function(){
+
             let h3 = document.querySelector("h3")
+
             let randomColor = colorGenerator()
             h3.innerText = randomColor
+
             let div = document.querySelector("div")
             div.style.backgroundColor = randomColor
         })
 
         function colorGenerator(){
+
             let red = Math.round(Math.random()*256)
             let blue = Math.round(Math.random()*256)
             let green = Math.round(Math.random()*256)
